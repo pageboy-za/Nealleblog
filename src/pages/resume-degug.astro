@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+
+let debugInfo = {
+  collections: {},
+  error: null,
+};
+
+try {
+  // Try to get all collections
+  const collections = ["posts", "resumes"];
+  for (const collection of collections) {
+    try {
+      const data = await getCollection(collection);
+      debugInfo.collections[collection] = {
+        count: data.length,
+        items: data.map((item) => ({
+          id: item.id,
+          slug: item.slug,
+        })),
+      };
+    } catch (e) {
+      debugInfo.collections[collection] = { error: e.message };
+    }
+  }
+} catch (e) {
+  debugInfo.error = e.message;
+}
+---
+
+<html>
+  <head>
+    <title>Debug Content Collections</title>
+  </head>
+  <body>
+    <h1>Content Collections Debug</h1>
+    <pre>{JSON.stringify(debugInfo, null, 2)}</pre>
+  </body>
+</html>

@@ -156,5 +156,5 @@ const resumeCollection = defineCollection({
 
 export const collections = {
   posts: postsCollection,
-  resumes: resumeCollection,
+  resume: resumeCollection,
 };
