@@ -1,0 +1,23 @@
+---
+import BackToTop from "../../components/BackToTop.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+---
+
+<Layout title="Blog" description="Blog Posts on payments, tech, and more">
+  <h1 class="text-6xl font-extrabold font-serif">Posts</h1>
+  <ul class="list-disc pl-8">
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <BackToTop />
+</Layout>
