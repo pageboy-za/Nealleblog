@@ -8,16 +8,45 @@ const posts = await getCollection("posts");
 ---
 
 <Layout title="Blog" description="Blog Posts on payments, tech, and more">
-  <h1 class="text-6xl font-extrabold font-serif">Posts</h1>
-  <ul class="list-disc pl-8">
+  <h1 class="text-6xl font-extrabold font-serif mb-8">Posts</h1>
+
+  <div class="grid gap-8">
     {
       posts.map((post) => (
-        <li>
-          <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-        </li>
+        <article class="border-b pb-6">
+          <h2 class="text-2xl font-bold mb-2">
+            <a href={`/posts/${post.slug}`} class="hover:text-blue-600">
+              {post.data.title}
+            </a>
+          </h2>
+          <div class="flex gap-2 items-center text-sm text-gray-600 mb-3">
+            <time datetime={post.data.publishDate.toISOString()}>
+              {post.data.publishDate.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
+            <span>•</span>
+            <span>{post.data.author}</span>
+          </div>
+          <p class="text-gray-700 mb-3">{post.data.description}</p>
+          <div class="flex flex-wrap gap-1">
+            {post.data.keywords.slice(0, 3).map((keyword) => (
+              <span class="px-2 py-1 bg-gray-100 rounded-full text-xs">
+                {keyword}
+              </span>
+            ))}
+            {post.data.keywords.length > 3 && (
+              <span class="px-2 py-1 text-xs">
+                +{post.data.keywords.length - 3} more
+              </span>
+            )}
+          </div>
+        </article>
       ))
     }
-  </ul>
+  </div>
 
   <BackToTop />
 </Layout>

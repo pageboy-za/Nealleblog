@@ -1,0 +1,227 @@
+---
+// src/components/Resume.astro
+// This component takes a JSONResume format and displays it
+
+export interface ResumeProps {
+  resume: any;
+}
+
+const { resume } = Astro.props;
+---
+
+<div class="resume-container max-w-4xl mx-auto">
+  <!-- Header / Basics -->
+  <header class="mb-8">
+    <h1 class="text-4xl font-bold mb-2">{resume.basics.name}</h1>
+    {
+      resume.basics.label && (
+        <h2 class="text-2xl text-gray-600 mb-2">{resume.basics.label}</h2>
+      )
+    }
+
+    <div class="flex flex-wrap gap-4 text-sm my-3">
+      {
+        resume.basics.email && (
+          <a
+            href={`mailto:${resume.basics.email}`}
+            class="flex items-center gap-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            {resume.basics.email}
+          </a>
+        )
+      }
+      {
+        resume.basics.phone && (
+          <a
+            href={`tel:${resume.basics.phone}`}
+            class="flex items-center gap-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+            {resume.basics.phone}
+          </a>
+        )
+      }
+      {
+        resume.basics.url && (
+          <a
+            href={resume.basics.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+              />
+            </svg>
+            {resume.basics.url.replace(/^https?:\/\//, "")}
+          </a>
+        )
+      }
+    </div>
+
+    {
+      resume.basics.summary && (
+        <p class="text-gray-700 leading-relaxed">{resume.basics.summary}</p>
+      )
+    }
+  </header>
+
+  <!-- Skills -->
+  {
+    resume.skills && resume.skills.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 border-b pb-2">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {resume.skills.map((skill: any) => (
+            <div class="mb-3">
+              <h3 class="font-semibold text-lg">{skill.name}</h3>
+              {skill.keywords && skill.keywords.length > 0 && (
+                <div class="flex flex-wrap gap-1 mt-1">
+                  {skill.keywords.map((keyword: string) => (
+                    <span class="px-2 py-1 bg-gray-100 rounded-full text-xs">
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Work Experience -->
+  {
+    resume.work && resume.work.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 border-b pb-2">Work Experience</h2>
+        <div class="space-y-6">
+          {resume.work.map((job: any) => (
+            <div class="mb-4">
+              <div class="flex flex-wrap justify-between items-start mb-1">
+                <h3 class="text-xl font-semibold">{job.position}</h3>
+                <div class="text-sm text-gray-600">
+                  {job.startDate &&
+                    job.startDate.substring(0, 7).replace("-", "/")}{" "}
+                  —
+                  {job.endDate
+                    ? job.endDate.substring(0, 7).replace("-", "/")
+                    : "Present"}
+                </div>
+              </div>
+              <div class="text-lg font-medium text-gray-700 mb-2">
+                {job.name}
+              </div>
+              {job.summary && (
+                <p class="text-gray-600 mb-2 italic">{job.summary}</p>
+              )}
+
+              {job.highlights && job.highlights.length > 0 && (
+                <ul class="list-disc pl-5 space-y-1">
+                  {job.highlights.map((highlight: string) => (
+                    <li class="text-gray-800">{highlight}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Education -->
+  {
+    resume.education && resume.education.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 border-b pb-2">Education</h2>
+        <div class="space-y-4">
+          {resume.education.map((edu: any) => (
+            <div>
+              <div class="flex justify-between items-start">
+                <h3 class="text-xl font-semibold">{edu.institution}</h3>
+                <div class="text-sm text-gray-600">
+                  {edu.startDate &&
+                    edu.startDate.substring(0, 7).replace("-", "/")}{" "}
+                  —
+                  {edu.endDate
+                    ? edu.endDate.substring(0, 7).replace("-", "/")
+                    : "Present"}
+                </div>
+              </div>
+              <div class="text-lg">
+                {edu.studyType}
+                {edu.area && `, ${edu.area}`}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Projects (if available) -->
+  {
+    resume.projects && resume.projects.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 border-b pb-2">Projects</h2>
+        <div class="space-y-4">
+          {resume.projects.map((project: any) => (
+            <div>
+              <h3 class="text-xl font-semibold">{project.name}</h3>
+              {project.description && (
+                <p class="text-gray-700 mb-2">{project.description}</p>
+              )}
+
+              {project.highlights && project.highlights.length > 0 && (
+                <ul class="list-disc pl-5 space-y-1">
+                  {project.highlights.map((highlight: string) => (
+                    <li class="text-gray-800">{highlight}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+</div>

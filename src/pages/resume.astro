@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Job from "../components/Resume.astro";
+import BackToTop from "../components/BackToTop.astro";
+import { getCollection } from "astro:content";
+
+// Get the resume data
+const resumeData = await getCollection("resumes");
+const resume = resumeData[0]; // Assuming we have just one resume for now
+---
+
+<Layout
+  title={`${resume.data.basics.name} - Resume`}
+  description={`Professional resume of ${resume.data.basics.name}, ${resume.data.basics.label}`}
+>
+  <div class="py-8">
+    <div class="mb-6 flex justify-between items-center">
+      <h1 class="text-5xl font-extrabold font-serif">Resume</h1>
+      <div class="flex gap-4">
+        <a
+          href="/resume.pdf"
+          class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
+        >
+          Download PDF
+        </a>
+      </div>
+    </div>
+
+    <Job resume={resume.data} />
+  </div>
+
+  <BackToTop />
+</Layout>

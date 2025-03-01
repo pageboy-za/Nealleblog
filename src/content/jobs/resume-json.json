@@ -1,0 +1,183 @@
+{
+  "basics": {
+    "name": "Nealle Page",
+    "label": "Product Manager - Payments",
+    "email": "hello@nealle.page",
+    "phone": "+44 075 900 29708",
+    "url": "https://neallepage.com",
+    "summary": "As an experienced product builder in the global payments industry, I have a proven track record of building scalable digital payment solutions that drive innovation and growth. I've led the development of payment systems powering Apple Pay and Google Pay, transforming the customer experience across multiple markets. My expertise spans managing end-to-end payment ecosystems, including tokenisation, fraud detection (leveraging machine learning), and complex API integration, all while ensuring high security and compliance standards. I'm skilled in leading distributed teams, collaborating across time zones, and aligning engineering, product, and business goals to deliver impactful outcomes at scale. I thrive in fast-paced environments and have consistently delivered solutions that optimise operational efficiency, improve customer experiences, and support organisational growth across diverse markets.",
+    "profiles": [
+      {
+        "network": "Website",
+        "url": "https://neallepage.com"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Deliveroo",
+      "position": "Staff Product Manager - Payments",
+      "startDate": "2023-12",
+      "endDate": "2024-11",
+      "summary": "Deliveroo is a three-sided marketplace for food, grocery and general retail sales and delivery. It operates across ten countries.",
+      "highlights": [
+        "Worked with primary PSP and internal stakeholders to optimise 3DS and the use of exemptions to improve authorisation rates while managing chargeback risks.",
+        "Developed a strategy framework for evaluating the addition of new local payment methods to markets consistently across all ten markets."
+      ]
+    },
+    {
+      "name": "Tarabut",
+      "position": "Lead Product Manager - Payments",
+      "startDate": "2022-07",
+      "endDate": "2023-07",
+      "summary": "Tarabut is a MENA-based Open Banking Startup that offers Account Information and Payment Initiation Services to fintech companies, banks, and other businesses.",
+      "highlights": [
+        "Worked with tech lead to transform our team from a feature team to an outcomes-focused team.",
+        "This allowed us to develop a new version of our open banking account-to-account payments system to prepare for the upcoming launch of open banking in Saudi Arabia. The work was completed in six months and positioned us to take advantage of a 27 times increase in the total addressable market."
+      ]
+    },
+    {
+      "name": "Ocado Technology",
+      "position": "Principal Product Manager",
+      "startDate": "2021-10",
+      "endDate": "2022-07",
+      "summary": "Ocado is a UK-based E-commerce technology company that operates the world's largest online-only supermarket and an end-to-end grocery retailing platform as a service.",
+      "highlights": [
+        "Defined a strategy for selling general merchandise products on the Ocado platform, allowing the business to meet contractual obligations and sign a new customer agreement.",
+        "Built a cross-stream roadmap for an initial launch, collaborating with teams across the platform to agree on changes to individual product roadmaps.",
+        "Championed the vision built with partners and company executives across all teams to align planned launch dates to delivery and get buy-in to the change of strategy."
+      ]
+    },
+    {
+      "name": "Ocado Technology",
+      "position": "Group Product Manager",
+      "startDate": "2021-03",
+      "endDate": "2021-09",
+      "highlights": [
+        "Managed a group of PMs - coaching and developing individuals to deliver products that deliver value and are highly available.",
+        "Led a working group to transition the product roadmap from output to explicit outcomes, delivered a workshop and developed a playbook for the product teams to implement the new working methods.",
+        "Improved confidence in sprint and quarterly plans produced by the team by changing the ways of working between the engineering, UX and product teams.",
+        "Stabilised the team, recruited new staff and ensured a succession candidate was ready to step up."
+      ]
+    },
+    {
+      "name": "Ocado Solutions",
+      "position": "Solutions Product Manager",
+      "startDate": "2018-10",
+      "endDate": "2021-02",
+      "highlights": [
+        "Built the first single-view roadmap across the company, providing clear communication between all stakeholders.",
+        "Lead product manager assigned to the company's largest customer to negotiate and agree on platform adaptions to suit the client's needs to benefit the platform and our other clients.",
+        "Developed and presented product strategic vision with my team and solo to various audiences, from development teams in regional offices to the CEO.",
+        "Agreed on a common PSD2 Strong Customer Authentication approach across four countries and retailers, matching the retailers' risk attitude to a compliant flow."
+      ]
+    },
+    {
+      "name": "Ocado Technology",
+      "position": "Product Owner - Payments and Fraud",
+      "startDate": "2016-09",
+      "endDate": "2018-09",
+      "highlights": [
+        "Managed an outsourced development team for the delivery of legacy payment systems.",
+        "Developed partnerships and architecture that improved speed to market and offered transaction processing flexibility whilst maintaining PCI compliance.",
+        "I led a team that developed a novel machine-learning algorithm to detect grocery order fraud before transaction processing."
+      ]
+    },
+    {
+      "name": "Capital One UK",
+      "position": "Senior Manager - Payments, Customer Fulfilment",
+      "startDate": "2015-08",
+      "endDate": "2016-07",
+      "highlights": [
+        "I advised leadership on the evolution of payments from cards to mobile and wearable devices, allowing the definition of a strategy.",
+        "Reviewed and corrected EMV profiles, completed profile updates in time to ensure compliance deadlines were met and reduced complexity to save on certification costs.",
+        "Created a strategy for inbound payments to improve efficiency and reduce costs."
+      ]
+    },
+    {
+      "name": "Mastercard Inc.",
+      "position": "Business Leader",
+      "startDate": "2013-09",
+      "endDate": "2015-02",
+      "highlights": [
+        "Product Managed and implemented a suite of APIs and a web application for payment token lifecycle management and customer services, delivered in time for launch by managing and negotiating last-minute changes.",
+        "Analysed biometric identification to define new standards, compliance programmes, and scheme rule changes.",
+        "Filed two patent applications relating to NFC personalisation verification and biometric cardholder verification methods."
+      ]
+    },
+    {
+      "name": "Citigroup",
+      "position": "Vice President - Mobile Application Development Architecture Lead",
+      "startDate": "2011-08",
+      "endDate": "2013-09",
+      "highlights": [
+        "Avoided OCC fines by implementing a global compliance programme that minimised the company's risk and maximised the agility of the technology investment.",
+        "Built up an international mobile development community and published a development guideline document to promote knowledge sharing, standards-setting, better SDLC compliance, and higher developer efficiency.",
+        "Cooperated with legal, compliance, and branding groups to ensure that risks were identified and appropriate controls were in place for the mobile applications.",
+        "Implemented technologies like a secure sandbox and API gateway technologies to allow for faster application development with standard secure offerings."
+      ]
+    },
+    {
+      "name": "White Eagle Prepaid",
+      "position": "Business Development Consultant",
+      "startDate": "2011-03",
+      "endDate": "2011-08",
+      "highlights": [
+        "Mapped out the actual financial aspects of agreements with partners to help improve the pricing and efficiency of the UK operation.",
+        "Secured two contracts and improved the sales pipeline by targeting specific verticals in the prepaid market."
+      ]
+    },
+    {
+      "name": "Travelex - Card and Mobile Payments",
+      "position": "EMV Migration Consultant",
+      "startDate": "2010-07",
+      "endDate": "2011-03",
+      "highlights": [
+        "I led the migration of multiple pre-paid card programs in various currencies to Chip and PIN.",
+        "Up-skilled fraud and operation teams through Chip and PIN training, improving their ability to support customer queries and refine fraud rules.",
+        "Increased chip certification efficiency and reduced costs by implementing a standard card personalisation profile and managing the certification process."
+      ]
+    },
+    {
+      "name": "Aconite Technology",
+      "position": "Senior Business Consultant",
+      "startDate": "2008-02",
+      "endDate": "2010-07",
+      "highlights": [
+        "Implemented a strategy, using consulting to establish the company's reputation and pedigree and acquire qualified sales leads across Sub-Saharan Africa, South America and other developing markets.",
+        "Won a training contract in five countries supporting an EMV migration programme, further establishing the company's reputation in those markets and leading to further business.",
+        "Was a crucial part in the awarding of a contract worth over £1,000,000."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Product Management",
+      "keywords": ["Strategy", "Roadmapping", "Stakeholder Management"]
+    },
+    {
+      "name": "Agile Development",
+      "keywords": ["Scrum", "Kanban", "Continuous Delivery"]
+    },
+    {
+      "name": "Payments",
+      "keywords": ["Payment Processing", "PSD2", "SCA", "Tokenisation"]
+    },
+    {
+      "name": "Issuing & acquiring",
+      "keywords": ["Card Issuing", "Merchant Acquiring", "EMV"]
+    },
+    {
+      "name": "E & M-commerce",
+      "keywords": ["Digital Wallets", "Mobile Payments", "Online Checkout"]
+    },
+    {
+      "name": "APIs",
+      "keywords": ["RESTful APIs", "API Design", "Integration"]
+    },
+    {
+      "name": "Biometrics and Authentication",
+      "keywords": ["3DS", "Biometric Verification", "Fraud Detection"]
+    }
+  ]
+}
