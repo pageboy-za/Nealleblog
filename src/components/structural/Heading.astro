@@ -1,0 +1,46 @@
+---
+const headingOptions = {
+  h1: "text-6xl",
+  h2: "text-5xl",
+  h3: "text-4xl",
+  h4: "text-3xl",
+  h5: "text-2xl",
+  h6: "text-xl",
+};
+
+type Props = {
+  tagName: keyof typeof headingOptions;
+  size: keyof typeof headingOptions;
+};
+
+const { tagName, size } = Astro.props;
+const Tag = tagName;
+---
+
+<Tag class:list={["leading-tight", headingOptions[size]]}>
+  <slot />
+</Tag>
+
+<!-- <style>
+  .default {
+    line-height: 1.1;
+  }
+  .xxl {
+    font-size: var(--fs-2xl);
+  }
+  .xl {
+    font-size: var(--fs-xl);
+  }
+  .lg {
+    font-size: var(--fs-lg);
+  }
+  .md {
+    font-size: var(--fs-md);
+  }
+  .sm {
+    font-size: var(--fs-sm);
+  }
+  .xs {
+    font-size: var(--fs-xs);
+  }
+</style> -->

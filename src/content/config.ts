@@ -2,6 +2,7 @@ import { defineCollection, z } from "astro:content";
 
 // Your existing posts collection
 const postsCollection = defineCollection({
+  type: "content",
   schema: z.object({
     title: z.string(),
     publishDate: z.date().default(() => new Date()),
@@ -13,6 +14,7 @@ const postsCollection = defineCollection({
 
 // New resume collection using JSONResume format
 const resumeCollection = defineCollection({
+  type: "data",
   schema: z.object({
     basics: z.object({
       name: z.string(),
@@ -156,5 +158,5 @@ const resumeCollection = defineCollection({
 
 export const collections = {
   posts: postsCollection,
-  resume: resumeCollection,
+  resumes: resumeCollection,
 };
