@@ -8,9 +8,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 import vercel from "@astrojs/vercel";
 
+import pdf from "astro-pdf";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), markdoc(), keystatic()],
+  integrations: [react(), markdoc(), keystatic(), pdf(options)],
 
   vite: {
     plugins: [tailwindcss()],

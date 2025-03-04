@@ -1,12 +1,23 @@
 ---
-// src/components/Navigation.astro
+const { url } = Astro.request;
+const isHomePage = url.pathname === "/";
+console.log(url.pathname);
 ---
 
 <nav class="py-4 mb-8">
   <div class="flex justify-between items-center">
-    <a href="/" class="text-xl font-bold">Nealle Page</a>
+    
     <ul class="flex space-x-6">
-      <li><a href="/" class="hover:text-blue-900">Home</a></li>
+      {
+        isHomePage ? null : (
+        <a href="/" class="text-xl font-bold">Nealle Page</a>
+          <li>
+            <a href="/" class="hover:text-blue-900">
+              Home
+            </a>
+          </li>
+        )
+      }
       <li><a href="/posts" class="hover:text-blue-900">Blog</a></li>
       <li><a href="/resume" class="hover:text-blue-900">Resume</a></li>
     </ul>
