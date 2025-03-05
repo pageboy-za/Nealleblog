@@ -1,4 +1,4 @@
-// scripts/generate-resume-pdf.mjs
+// scripts/generate-pdf.mjs
 import { fileURLToPath } from "url";
 import path from "path";
 import fs from "fs/promises";
@@ -11,15 +11,16 @@ async function generateResumePDF() {
   console.log("Generating resume PDF...");
 
   try {
-    // Ensure dist directory exists
-    const distDir = path.join(projectRoot, "dist");
+    // Use public directory instead of dist
+    const publicDir = path.join(projectRoot, "public");
+
+    // Ensure public directory exists
     try {
-      await fs.access(distDir);
+      await fs.access(publicDir);
     } catch (error) {
-      console.error(
-        "Error: dist directory does not exist. Run astro build first."
-      );
-      process.exit(1);
+      // Create public directory if it doesn't exist
+      await fs.mkdir(publicDir, { recursive: true });
+      console.log("Created public directory");
     }
 
     // Path to the PDF component
@@ -28,8 +29,8 @@ async function generateResumePDF() {
       "src/components/ResumePDF.astro"
     );
 
-    // Output path
-    const outputPath = path.join(distDir, "resume.pdf");
+    // Output path in public directory
+    const outputPath = path.join(publicDir, "resume.pdf");
 
     // Generate the PDF
     await generatePDF({

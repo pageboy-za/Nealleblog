@@ -13,7 +13,7 @@ if (!resume) {
 }
 
 // Format dates for work experience
-const formatDate = (dateStr) => {
+const formatDate = (dateStr: string) => {
   if (!dateStr) return "Present";
   return dateStr.substring(0, 7).replace("-", "/");
 };
@@ -22,9 +22,10 @@ const formatDate = (dateStr) => {
 <!doctype html>
 <html>
   <head>
-    <title>{resume.basics.name} - CV</title>
+    <meta charset="utf-8" />
+    <title>{resume.basics.name} - Resume</title>
     <meta name="author" content={resume.basics.name} />
-    <meta name="subject" content="Nealle Page's CV" />
+    <meta name="subject" content="Professional Resume" />
     <meta
       name="keywords"
       content={resume.skills?.map((skill) => skill.name).join(", ")}
@@ -42,7 +43,7 @@ const formatDate = (dateStr) => {
         line-height: 1.5;
         color: var(--primary-text);
         margin: 0;
-        padding: 0;
+        padding: 1cm;
         max-width: 21cm;
         margin: 0 auto;
       }
@@ -172,6 +173,11 @@ const formatDate = (dateStr) => {
         padding: 0.05cm 0.2cm;
         border-radius: 0.1cm;
         font-size: 8pt;
+      }
+
+      @page {
+        size: A4;
+        margin: 1cm;
       }
     </style>
   </head>

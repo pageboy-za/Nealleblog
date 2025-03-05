@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
-import keystatic from "@keystatic/astro";
+
 import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel";
 import pdf from "astro-pdf";
@@ -31,7 +31,7 @@ const pdfOptions = {
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  integrations: [react(), markdoc(), keystatic(), pdf(pdfOptions), icon()],
+  integrations: [react(), markdoc(), pdf(pdfOptions), icon()],
 
   vite: {
     plugins: [tailwindcss()],

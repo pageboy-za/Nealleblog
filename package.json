@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "nealle-page-homepage-blog",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,9 +11,7 @@
   "dependencies": {
     "@astrojs/markdoc": "^0.12.10",
     "@astrojs/react": "^4.2.1",
-    "@astrojs/vercel": "^8.1.1",
-    "@keystatic/astro": "^5.0.5",
-    "@keystatic/core": "^0.5.45",
+    "@astrojs/vercel": "^8.0.4",
     "@tailwindcss/vite": "^4.0.6",
     "@types/react": "^19.0.9",
     "@types/react-dom": "^19.0.3",

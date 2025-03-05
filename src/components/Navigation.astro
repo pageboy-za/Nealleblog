@@ -1,7 +1,7 @@
 ---
 const { url } = Astro.request;
-const isHomePage = url.pathname === "/";
-console.log(url.pathname);
+const isHomePage = Astro.url.pathname === "/";
+
 ---
 
 <nav class="py-4 mb-8">
@@ -19,7 +19,7 @@ console.log(url.pathname);
         )
       }
       <li><a href="/posts" class="hover:text-blue-900">Blog</a></li>
-      <li><a href="/resume" class="hover:text-blue-900">Resume</a></li>
+      <li><a href="/NeallePageCV" class="hover:text-blue-900">CV</a></li>
     </ul>
   </div>
 </nav>
