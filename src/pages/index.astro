@@ -3,50 +3,39 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import nealle from "../../public/NealleP.avif";
 import Heading from "../components/structural/Heading.astro";
-import EmailIcon from "../assets/email.svg";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout
-    title="Nealle Page"
-    description="The home page of Nealle Page, an experienced Product Manager"
+  title="Nealle Page"
+  description="The home page of Nealle Page, an experienced Product Manager"
 >
-    <div class="bg-white py-24 sm:py-32">
-        <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-            <Heading
-                tagName="h1"
-                size="h1"
-                classes=" font-semibold text-blue-900">Hello</Heading
-            >
-            <p
-                class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl"
-            >
-                I'm Nealle.
-            </p>
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+      <Heading tagName="h1" size="h1" classes=" font-semibold text-blue-900"
+        >Hello</Heading
+      >
+      <p
+        class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl"
+      >
+        I'm Nealle.
+      </p>
 
-            <p class="text-lg">
-                An experienced Product Manager that thrives on solving complex
-                problems and building products that people love to use and that
-                creates value.
-            </p>
-            <div class="flex justify-center">
-                <Image
-                    src={nealle}
-                    alt="Nealle Page"
-                    width={768}
-                    height={1024}
-                    class="rounded-2xl"
-                />
-            </div>
-        </div>
-        <div>
-            <a href="mailto:hello@nealle.page" aria-label="Email Nealle Page">
-                <Image src={EmailIcon} alt="email icon" class="">
-                    <span>hello@nealle.page</span>
-                </Image>
-            </a>
-        </div>
+      <p class="text-lg">
+        An experienced Product Manager that thrives on solving complex problems
+        and building products that people love to use and that creates value.
+      </p>
+      <div class="flex justify-center">
+        <Image
+          src={nealle}
+          alt="Nealle Page"
+          width={768}
+          height={1024}
+          class="rounded-2xl"
+        />
+      </div>
     </div>
+  </div>
 </Layout>
