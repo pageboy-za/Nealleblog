@@ -30,6 +30,7 @@ const pdfOptions = {
 
 // https://astro.build/config
 export default defineConfig({
+  output: "static",
   integrations: [react(), markdoc(), keystatic(), pdf(pdfOptions), icon()],
 
   vite: {
