@@ -2,7 +2,7 @@
 import { fileURLToPath } from "url";
 import path from "path";
 import fs from "fs/promises";
-import { generatePDF } from "astro-pdf/utils";
+import { generatePDF } from "astro-pdf";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
@@ -11,7 +11,6 @@ async function generateResumePDF() {
   console.log("Generating resume PDF...");
 
   try {
-    // Use public directory instead of dist
     const publicDir = path.join(projectRoot, "public");
 
     // Ensure public directory exists
@@ -30,7 +29,7 @@ async function generateResumePDF() {
     );
 
     // Output path in public directory
-    const outputPath = path.join(publicDir, "resume.pdf");
+    const outputPath = path.join(publicDir, "NeallePageCV.pdf");
 
     // Generate the PDF
     await generatePDF({

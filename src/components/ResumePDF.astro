@@ -13,7 +13,7 @@ if (!resume) {
 }
 
 // Format dates for work experience
-const formatDate = (dateStr: string) => {
+const formatDate = (dateStr: any) => {
   if (!dateStr) return "Present";
   return dateStr.substring(0, 7).replace("-", "/");
 };

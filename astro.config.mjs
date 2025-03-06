@@ -14,6 +14,9 @@ const pdfOptions = {
   format: "A4",
   path: "/NeallePageCV", // This should match your page route
   output: "public/NeallePageCV.pdf",
+  pages: {
+    "/NeallePageCV": "NeallePageCV.pdf",
+  },
   waitUntil: "networkidle2",
   printBackground: true,
   scale: 1,
